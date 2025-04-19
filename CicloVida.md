@@ -1,5 +1,3 @@
-Collecting workspace information
-
 ### **Descripción del Ciclo de Vida del Software**
 
 ---
