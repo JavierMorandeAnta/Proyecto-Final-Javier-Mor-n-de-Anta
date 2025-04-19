@@ -25,5 +25,10 @@ class ProductionConfig(Config):
 config_dict = {
     "development": DevelopmentConfig,
     "production": ProductionConfig,
+    "testing": TestingConfig,
     # Add other environments if needed
 }
+
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
