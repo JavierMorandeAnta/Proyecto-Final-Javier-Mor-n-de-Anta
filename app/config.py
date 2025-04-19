@@ -20,6 +20,9 @@ class ProductionConfig(Config):
     DEBUG = False
     # Add other production configurations here
 
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
 
 # Dictionary to map environment names to configuration classes
 config_dict = {
@@ -29,6 +32,3 @@ config_dict = {
     # Add other environments if needed
 }
 
-class TestingConfig(Config):
-    TESTING = True
-    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"

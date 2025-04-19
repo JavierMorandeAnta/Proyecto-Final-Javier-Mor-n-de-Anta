@@ -19,9 +19,7 @@ Para más detalles, consulta el archivo [ArquitecturaSolución.md](ArquitecturaS
 
 1. **Instalar Docker y Docker Compose**: La base de datos se ejecutará en un contenedor Docker.
 2. **Python 3.8+**: Para ejecutar la aplicación localmente.
-3. **Permisos de ejecución**: Asegúrate de que el archivo `setup.sh` tenga permisos de ejecución:
-   ```bash
-   chmod +x setup.sh
+
 ---
 
 ## **Configuración del Entorno Local**
@@ -32,6 +30,20 @@ Para más detalles, consulta el archivo [ArquitecturaSolución.md](ArquitecturaS
    cd Proyecto-Final-Javier-Moran-de-Anta
    
 2. Ejecuta el script de configuración:
+Asegúrate de que el archivo `setup.sh` tenga permisos de ejecución:
+   ```bash
+   chmod +x setup.sh
+   ```
+
+Levanta Docker:
+
+`sudo systemctl start docker`
+
+Si no tienes permisos para ejecutar docker como usuario normal, puede añadir tu usuario al grupo docker:
+
+`sudo usermod -aG docker $USER`
+
+Y ejecútalo de la siguiente manera:
 
 `./setup.sh`
 
