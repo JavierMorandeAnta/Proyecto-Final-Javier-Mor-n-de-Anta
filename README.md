@@ -51,4 +51,9 @@ Finalmente inicia la aplicación:
 
 La API estará disponible en http://127.0.0.1:5000.
 
+4. Ejecución de test:
+Ejecución de las pruebas unitarias declaradas en la carpeta /tests para su ejecución asegurate de que el entorno vitual
+este activado.
 
+Para ejecutar las pruebas ejecuta el siguiente comando:
+`pytest --cov=app tests/`
