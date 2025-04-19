@@ -28,40 +28,61 @@ Para más detalles, consulta el archivo [ArquitecturaSolución.md](ArquitecturaS
    ```bash
    git clone https://github.com/JavierMorandeAnta/Proyecto-Final-Javier-Moran-de-Anta.git
    cd Proyecto-Final-Javier-Moran-de-Anta
-   
+   ```
+
 2. Ejecuta el script de configuración:
-Asegúrate de que el archivo `setup.sh` tenga permisos de ejecución:
+   Asegúrate de que el archivo `setup.sh` tenga permisos de ejecución:
    ```bash
    chmod +x setup.sh
    ```
 
-Levanta Docker:
+   Levanta Docker:
 
-`sudo systemctl start docker`
+   ```bash
+   sudo systemctl start docker
+   ```
 
-Si no tienes permisos para ejecutar docker como usuario normal, puede añadir tu usuario al grupo docker:
+   Si no tienes permisos para ejecutar Docker como usuario normal, puedes añadir tu usuario al grupo Docker:
 
-`sudo usermod -aG docker $USER`
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
 
-Y ejecútalo de la siguiente manera:
+   Y ejecútalo de la siguiente manera:
 
-`./setup.sh`
+   ```bash
+   ./setup.sh
+   ```
 
-Este script:
+   Este script:
 
- - Configura un entorno virtual.
- - Instala las dependencias.
- - Inicia un contenedor Docker con PostgreSQL.
- - Crea las tablas necesarias en la base de datos.
+   - Configura un entorno virtual.
+   - Instala las dependencias.
+   - Inicia un contenedor Docker con PostgreSQL.
+   - Crea las tablas necesarias en la base de datos.
+
+   **Nota:** Si encuentras algún error relacionado con la conexión a Docker, puedes ejecutar el script `test_connection.py` ubicado en la carpeta `tests` para verificar que la conexión a la base de datos en Docker sea exitosa. Usa el siguiente comando:
+
+   ```bash
+   python tests/test_connection.py
+   ```
+
+   Esto te ayudará a diagnosticar problemas de conexión.
 
 3. Inicia la aplicación:
-Asegurate de tener el entorno virtual activado, si no lo tienes activado, actívalo con el siguiente comando:
-`source venv/bin/activate`
+   Asegúrate de tener el entorno virtual activado. Si no lo tienes activado, actívalo con el siguiente comando:
 
-Finalmente inicia la aplicación:
-`FLASK_ENV=development python run.py`
+   ```bash
+   source venv/bin/activate
+   ```
 
-La API estará disponible en http://127.0.0.1:5000.
+   Finalmente, inicia la aplicación:
+
+   ```bash
+   FLASK_ENV=development python run.py
+   ```
+
+   La API estará disponible en [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
 4. Ejecución de test:
 Ejecución de las pruebas unitarias declaradas en la carpeta /tests para su ejecución asegurate de que el entorno vitual
@@ -69,3 +90,4 @@ este activado.
 
 Para ejecutar las pruebas ejecuta el siguiente comando:
 `pytest --cov=app tests/`
+
