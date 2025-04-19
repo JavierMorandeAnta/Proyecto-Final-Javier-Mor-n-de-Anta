@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 from app.models import Data
 from app import db
 
@@ -43,7 +43,8 @@ def delete_data(id):
     """
     Elimina un dato de la base de datos por su ID.
     """
-    element_to_delete = Data.query.get(id)
+    with current_app.app_context():
+        element_to_delete = db.session.get(Data, id)
     if not element_to_delete:
         return {"message": "Data not found"}, 404
 

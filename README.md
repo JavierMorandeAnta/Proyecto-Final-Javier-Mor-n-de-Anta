@@ -85,9 +85,24 @@ Para más detalles, consulta el archivo [ArquitecturaSolución.md](ArquitecturaS
    La API estará disponible en [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
 4. Ejecución de test:
-Ejecución de las pruebas unitarias declaradas en la carpeta /tests para su ejecución asegurate de que el entorno vitual
-este activado.
+   Ejecución de las pruebas unitarias declaradas en la carpeta /tests para su ejecución asegurate de que el entorno vitual
+   este activado.
 
-Para ejecutar las pruebas ejecuta el siguiente comando:
-`pytest --cov=app tests/`
+   Para ejecutar las pruebas ejecuta el siguiente comando:
+   ```bash
+   pytest --cov=app tests/
+   ```
 
+   **Generar un reporte HTML de cobertura**
+
+   Si deseas generar un reporte de cobertura en formato HTML, puedes usar el siguiente comando:
+
+   ```bash
+   pytest --cov=app --cov-report=html tests/
+   ```
+
+   Esto generará una carpeta llamada `htmlcov/` en el directorio raíz del proyecto. Para visualizar el reporte, abre el archivo `index.html` en un navegador web:
+
+   ```bash
+   xdg-open htmlcov/index.html
+   ```

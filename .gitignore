@@ -1,0 +1,38 @@
+# Entornos virtuales
+venv/
+.env/
+*.env
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cachés de pytest
+.pytest_cache/
+
+# Reportes de cobertura
+.coverage
+htmlcov/
+
+# Archivos de configuración de Docker
+flask-db/
+
+# Archivos de logs
+*.log
+
+# Archivos de bases de datos locales
+*.sqlite3
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Otros archivos innecesarios
+*.bak
+*.swp
+*.tmp
